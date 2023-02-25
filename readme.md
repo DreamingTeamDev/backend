@@ -1,31 +1,31 @@
-## GoIT Node.js Course Template Homework
-
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
-
-Додайте ментора до колаборації
-
-Для кожної домашньої роботи створюйте свою гілку.
-
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
-
-Кожна нова гілка для др повинна робитися з master
-
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
-
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
-
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
-
-### Команди:
-
+## Creation of a REST API for working with a collection of contacts.
+## Authentication
+>**Added user authentication/authorization logic using JWT**
+>---
+>**Created a middleware to validate the token and added it to all routes that need to be secured**
+>---
+>**Made pagination for the collection of contacts**
+>---
+>**Added filtering of contacts by the favorites field**
+>---
+>**Updated user's subscription to groups: starter, pro, business**
+---
+### Команди для запуску проекта:
 - `npm start` &mdash; старт сервера в режимі production
 - `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
 - `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
 - `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+### Possible endpoints:
+      _endpoints_             | _description_
+------------------------------|--------------------------
+POST /users/signup            | Registration
+POST /users/login             | Login
+GET /users/logout             | Logout
+GET /users/current            | Current user
+GET /contacts?page=1&limit=20 | Pagination for a collection of contacts (page, limit)
+GET /contacts?favorite=false  | Filter contacts by favorites field (true, false)
+PATCH /users                  | Subscription renewal ('starter', 'pro', 'business')
+                              |
+
+
+
