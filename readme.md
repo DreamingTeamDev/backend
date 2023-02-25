@@ -13,15 +13,15 @@
 - `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
 - `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
 ### Possible endpoints:
-      _endpoints_             | _description_
-------------------------------|--------------------------
-* `POST /users/signup`            | Registration
-* `POST /users/login`             | Login
-* `GET /users/logout`             | Logout
-* `GET /users/current`            | Current user
-* `GET /contacts?page=1&limit=20` | Pagination for a collection of contacts (page, limit)
-* `GET /contacts?favorite=false`  | Filter contacts by favorites field (true, false)
-* `PATCH /users`                  | Subscription renewal ('starter', 'pro', 'business')                               |
+
+#### Endpoints
+* `POST /users/signup` — Registration
+* `POST /users/login` — Login
+* `GET /users/logout` — Logout
+* `GET /users/current` — Current user
+* `GET /contacts?page=1&limit=20` — Pagination for a collection of contacts (page, limit)
+* `GET /contacts?favorite=false` — Filter contacts by favorites field (true, false)
+* `PATCH /users` — Subscription renewal ('starter', 'pro', 'business')                               |
 
 
 
