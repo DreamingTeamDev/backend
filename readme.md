@@ -1,11 +1,7 @@
-## Creation of a REST API for working with a collection of contacts.
-### Authentication
+## Загрузка файлів на сервер.
+### Аватарка користувача
 ***
-* Added user authentication/authorization logic using JWT
-* Created a middleware to validate the token and added it to all routes that need to be secured
-* Made pagination for the collection of contacts
-* Added filtering of contacts by the favorites field
-* Updated user's subscription to groups: starter, pro, business
+* Аватарка оброблена пакетом jimp і задані для неї розміри 250 на 250
 ***
 ### Команди для запуску проекта:
 - `npm start` &mdash; старт сервера в режимі production
@@ -21,6 +17,8 @@
 * `GET /contacts?page=1&limit=20` — Pagination for a collection of contacts (page, limit)
 * `GET /contacts?favorite=false` — Filter contacts by favorites field (true, false)
 * `PATCH /users` — Subscription renewal ('starter', 'pro', 'business')                               |
+* `PATCH /users/avatars` — Avatar change (250x250)
 
+ 
 
 
