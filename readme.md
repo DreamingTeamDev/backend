@@ -1,11 +1,7 @@
-## Creation of a REST API for working with a collection of contacts.
-### Authentication
+## Загрузка файлів на сервер.
+### Аватарка користувача
 ***
-* Added user authentication/authorization logic using JWT
-* Created a middleware to validate the token and added it to all routes that need to be secured
-* Made pagination for the collection of contacts
-* Added filtering of contacts by the favorites field
-* Updated user's subscription to groups: starter, pro, business
+* Аватарка оброблена пакетом jimp і задані для неї розміри 250 на 250
 ***
 ### Команди для запуску проекта:
 - `npm start` &mdash; старт сервера в режимі production
@@ -14,13 +10,15 @@
 - `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
 ***
 ### Possible endpoints:
-* `POST /users/signup` — Registration
-* `POST /users/login` — Login
-* `GET /users/logout` — Logout
-* `GET /users/current` — Current user
-* `GET /contacts?page=1&limit=20` — Pagination for a collection of contacts (page, limit)
-* `GET /contacts?favorite=false` — Filter contacts by favorites field (true, false)
-* `PATCH /users` — Subscription renewal ('starter', 'pro', 'business')                               |
+| Endpoint            | HTTP метод | Опис                                                                                                                                                     |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `api/users/signup`  | POST       | Реєструє нового користувача.                                                                                                                  |
+| `api/users/login`   | POST       | Авторизує користувача.                                                                                                                         |
+| `api/users/current` | GET        | Повертає інформацію про поточного користувача.                                                                                                             |
+| `api/users/logout`  | GET        | Розлогінює поточного користувача.                                                                                                                         |
+| `api/users/`        | PATCH      | Оновлює інформацію про поточного користувача, а саме subscription ["starter", "pro", "business"]. Для виконання запиту необхідно передати тіло запиту з оновленими даними. |
+| `api/users/avatars` | PATCH      | Оновлює аватар поточного користувача. Для виконання запиту необхідно передати тіло запиту з оновленим зображенням.                       |
 
+ 
 
 
