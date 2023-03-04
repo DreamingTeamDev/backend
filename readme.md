@@ -10,14 +10,14 @@
 - `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
 ***
 ### Possible endpoints:
-* `POST /users/signup` — Registration
-* `POST /users/login` — Login
-* `GET /users/logout` — Logout
-* `GET /users/current` — Current user
-* `GET /contacts?page=1&limit=20` — Pagination for a collection of contacts (page, limit)
-* `GET /contacts?favorite=false` — Filter contacts by favorites field (true, false)
-* `PATCH /users` — Subscription renewal ('starter', 'pro', 'business')                               |
-* `PATCH /users/avatars` — Avatar change (250x250)
+| Endpoint            | HTTP метод | Опис                                                                                                                                                     |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `api/users/signup`  | POST       | Реєструє нового користувача.                                                                                                                  |
+| `api/users/login`   | POST       | Авторизує користувача.                                                                                                                         |
+| `api/users/current` | GET        | Повертає інформацію про поточного користувача.                                                                                                             |
+| `api/users/logout`  | GET        | Розлогінює поточного користувача.                                                                                                                         |
+| `api/users/`        | PATCH      | Оновлює інформацію про поточного користувача, а саме subscription ["starter", "pro", "business"]. Для виконання запиту необхідно передати тіло запиту з оновленими даними. |
+| `api/users/avatars` | PATCH      | Оновлює аватар поточного користувача. Для виконання запиту необхідно передати тіло запиту з оновленим зображенням.                       |
 
  
 
