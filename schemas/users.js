@@ -10,7 +10,12 @@ const loginSchema = Joi.object({
   password: Joi.string().required().min(5).max(30),
 });
 
+const verifyEmailSchema = Joi.object({
+  email: Joi.string().required(),
+});
+
 module.exports = {
   signupSchema,
-  loginSchema
+  loginSchema,
+  verifyEmailSchema
 }
