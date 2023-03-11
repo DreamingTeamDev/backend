@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form id="feedback-form">
+      <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Текст письма:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Отправить</button>
+    </form>
+    <div id="success-message" style="display: none;">
+      Your message has been sent!
+    </div>
+    <div id="sending-error" style="display: none;">
+      Your message has NOT been sent!
+    </div>
+
+    <script src="js/feedback.js"></script>
+  </body>
+</html>

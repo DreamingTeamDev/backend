@@ -11,6 +11,7 @@ const addSchemaStatus = Joi.object({
   favorite: Joi.boolean().required(),
 });
 
+
 module.exports = {
   addSchema,
   addSchemaStatus,

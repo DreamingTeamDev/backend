@@ -10,3 +10,13 @@ const ctrlWrapper = ctrl => {
 }
 
 module.exports = ctrlWrapper;
+
+// helpers/ctrlWrapper.js
+
+// const ctrlWrapper = (ctrlFn) => {
+//   return (req, res, next) => {
+//     Promise.resolve(ctrlFn(req, res, next)).catch(next);
+//   };
+// };
+
+// module.exports = ctrlWrapper;
