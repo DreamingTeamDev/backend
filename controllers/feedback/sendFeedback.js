@@ -3,12 +3,12 @@ const { sendMailFeedback } = require('../../helpers');
 
 const sendFeedback = async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, phone, message } = req.body;
     const mailOptions = {
       from: FROM_EMAIL,
       to: 'dreaming.team.dev@gmail.com',
       subject: `New message from ${name}`,
-      text: `${message} \n\n Sender name: ${name} \n Sender email: ${email}`,
+      text: `${message} \n\n Sender name: ${name} \n Sender email: ${email} \n Sender phone: ${phone}`,
     };
 
     await sendMailFeedback(mailOptions);
