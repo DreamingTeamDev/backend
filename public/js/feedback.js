@@ -1,13 +1,17 @@
 const form = document.getElementById('feedback-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const successMessage = document.querySelector('.success-message');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  // https://mail-server-54wd.onrender.com/api/feedback
-  axios.post('localhost:3000/api/feedback', {
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const message = messageInput.value;
+
+  axios.post('https://m-ojdg.onrender.com/api/feedback', {
     name,
     email,
     message
@@ -18,7 +22,5 @@ form.addEventListener('submit', (event) => {
     })
     .catch((error) => {
       console.log(error);
-      console.log('error');
-      // errorMessage.style.display = 'block';
     });
-});
+}); 
