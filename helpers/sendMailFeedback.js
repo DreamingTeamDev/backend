@@ -1,21 +1,14 @@
 require("dotenv").config();
-const { FROM_EMAIL, PASSWORD } = process.env;
 const nodemailer = require('nodemailer');
-
+const { FROM_EMAIL, PASSWORD } = process.env;
 const transporter = nodemailer.createTransport({
   host: 'smtp.meta.ua',
   port: 465,
   secure: true,
-  auth: {
-    user: FROM_EMAIL,
-    pass: PASSWORD,
-  },
+  auth: { user: FROM_EMAIL, pass: PASSWORD },
 });
 
-const sendMailFeedback = async (mailOptions) => {
-  return await transporter.sendMail(mailOptions);
-};
-
+const sendMailFeedback = async mailOptions => await transporter.sendMail(mailOptions);
 module.exports = sendMailFeedback;
 
 

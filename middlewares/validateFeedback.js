@@ -1,11 +1,20 @@
-const { RequestError } = require('../helpers');
+const { RequestError } = require("../helpers");
 
-const validateFeedback = (schema) => (req, _, next) => {
-  const { error } = schema.validate(req.body);
-  if (error)
-    return next(RequestError(400, `missing required field — ${error.message}`));
+const validateFeedback = (schema) => {
+  return (req, _, next) => {
+    const validationResult = schema.validate(req.body);
 
-  return next();
+    if (validationResult.error) {
+      return next(
+        RequestError(
+          400,
+          `missing required field — ${validationResult.error.message}`
+        )
+      );
+    }
+
+    return next();
+  };
 };
 
 module.exports = validateFeedback;
