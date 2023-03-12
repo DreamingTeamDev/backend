@@ -1,5 +1,5 @@
 
-const { FROM_EMAIL } = process.env;
+const { FROM_EMAIL, TO_EMAIL } = process.env;
 const { sendMailFeedback } = require('../../helpers');
 
 const sendFeedback = async (req, res) => {
@@ -8,7 +8,7 @@ const sendFeedback = async (req, res) => {
 
     await sendMailFeedback({
       from: FROM_EMAIL,
-      to: 'dreaming.team.dev@gmail.com',
+      to: TO_EMAIL,
       subject: `New message from ${name}`,
       text: `${message} \n\n Sender name: ${name} \n Sender email: ${email} \n Sender phone: ${phone}`
     });
