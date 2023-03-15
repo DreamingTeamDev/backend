@@ -1,5 +1,5 @@
 const { FROM_EMAIL, TO_EMAIL } = process.env
-const sendMailFeedback = require('../../helpers')
+const { sendMailFeedback } = require('../../helpers')
 require('dotenv').config()
 
 const sendFeedback = async (req, res) => {
