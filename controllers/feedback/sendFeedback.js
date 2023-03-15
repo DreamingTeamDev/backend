@@ -1,4 +1,4 @@
-const { /* FROM_EMAIL, */ TO_EMAIL } = process.env
+const { FROM_EMAIL, TO_EMAIL } = process.env
 const { sendMailFeedback } = require('../../helpers')
 require('dotenv').config()
 
@@ -6,7 +6,7 @@ const sendFeedback = async (req, res) => {
   try {
     const { name, email, phone, message } = req.body
     const mailOptions = {
-      from: /* FROM_EMAIL */`${email}`,
+      from: FROM_EMAIL,
       to: TO_EMAIL,
       subject: `New message from ${name}`,
       text: `${message} \n\n Sender name: ${name} \n Sender email: ${email} \n Sender phone: ${phone}`,
