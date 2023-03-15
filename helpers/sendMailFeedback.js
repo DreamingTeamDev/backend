@@ -12,9 +12,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendMailFeedback = async mailOptions => await transporter.sendMail(mailOptions);
-module.exports = {
-  sendMailFeedback
-};
+module.exports = sendMailFeedback;
 
 
 // require("dotenv").config();
