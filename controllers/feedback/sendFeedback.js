@@ -1,4 +1,4 @@
-const { FROM_EMAIL, TO_EMAIL } = process.env
+const { FROM_EMAIL, TO_EMAIL,TO_EMAIL_1 } = process.env
 const { sendMailFeedback } = require('../../helpers')
 require('dotenv').config()
 
@@ -6,11 +6,14 @@ const sendFeedback = async (req, res) => {
   try {
     const { name, email, phone, message } = req.body
     const mailOptions = {
-      from: FROM_EMAIL,
-      to: TO_EMAIL,
+      from: `${name} <${FROM_EMAIL}>`,
+      to: [TO_EMAIL, TO_EMAIL_1],
       subject: `New message from ${name}`,
-      text: `${message} \n\n Sender name: ${name} \n Sender email: ${email} \n Sender phone: ${phone}`,
-    }
+      html: `<p style="font-size:16px;">${message}</p><br/><p style="font-size:16px;">Sender name: ${name}</p><p style="font-size:16px;">Sender email: ${email}</p><p style="font-size:16px;">Sender phone: ${phone}</p>`,
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    };
     await sendMailFeedback(mailOptions)
     res.send('Message sent')
   } catch (error) {
